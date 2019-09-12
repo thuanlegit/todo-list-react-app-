@@ -12,20 +12,31 @@ class App extends Component {
         {title: 'Đi chơi', isComplete: false}
       ]
     }
-    //this.onItemClicked = this.onItemClicked.bind(this);   //dùng thay cho arrow function ở event onClick
+    this.onItemClicked = this.onItemClicked.bind(this);  
 
   }
-  onItemClicked(key){
-    let completeStatus = !this.state.todoItems[key].isComplete;
-    let currentState = {...this.state};
-    currentState.todoItems[key].isComplete = completeStatus;
-    this.setState(currentState);
+  onItemClicked(item){
+    return (event) => {
+      const isComplete = item.isComplete;
+      const {todoItems} = this.state;
+      const index = this.state.todoItems.indexOf(item);
+      this.setState({
+        todoItems: [
+          ...todoItems.slice(0,index),
+          {
+            ...item,
+            isComplete: !isComplete
+          },
+          ...todoItems.slice(index + 1)
+        ]
+      });
+    }
   }
   render(){
     return <div className="App">
       {this.state.todoItems.length === 0 && "Nothing here"}
       {this.state.todoItems.length > 0 && this.state.todoItems.map((item, index) => 
-        <TodoItem key={index} onClick={()=>{this.onItemClicked(index)}} item={item}/>) }
+        <TodoItem key={index} onClick={this.onItemClicked(item)} item={item}/>) }
     </div>;
   }
 }
