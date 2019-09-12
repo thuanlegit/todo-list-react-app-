@@ -26,6 +26,24 @@
   color: #61dafb;
 }
 
+.App .Header {
+  color: #4d4d4d;
+  border-bottom: 1px solid #EEE;
+  padding: 10px 5px;
+  display: flex;
+}
+.App .Header > input {
+  border: none;
+  width: 100%;
+  padding-left: 7px;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  margin: 0 0 0 13px;
+}
+.App .Header input:focus {
+  outline: none;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
