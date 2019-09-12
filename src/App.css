@@ -44,6 +44,26 @@
 .App .Header input:focus {
   outline: none;
 }
+
+.App .Footer {
+  color: #4d4d4d;
+  border-bottom: 1px solid #EEE;
+  padding: 0px 5px;
+  display: flex;
+  font-size: 80%;
+  opacity: 0.8;
+}
+.App .Footer ul {
+  margin-left: 60px;
+  list-style-type: none;
+  display: flex;
+}
+.App .Footer ul li {
+  margin-left: 15px;
+}
+li.active {
+  color: aquamarine;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

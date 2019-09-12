@@ -14,9 +14,10 @@ class TodoItem extends Component {
         }
         return (
             <div className={classNames("TodoItem", { 
-                "TodoItem-complete": item.isComplete === true
+                "TodoItem-complete": item.isComplete === true,
+                "noDisplay": item.isDisplay === false
             })} >
-                <img onClick={onClick} src={url} width="32" height="32"></img>
+                <img onClick={onClick} src={url} width="32" height="32" alt="Check/Uncheck"/>
                 <p>{item.title}</p>
             </div>
         );
