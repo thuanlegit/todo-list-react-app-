@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
 import App from '../App';
 import './TodoItem.css';
-import classNames from 'classnames';
 import checkImg from '../img/not-success.svg';
-import checkCompleteImg from '../img/success.svg'
+import checkCompleteImg from '../img/success.svg';
 
 class TodoItem extends Component {
     render(){
@@ -23,5 +25,14 @@ class TodoItem extends Component {
         );
     }
 }
+
+TodoItem.propTypes = {
+    item: PropTypes.shape({
+        isComplete: PropTypes.bool,
+        title: PropTypes.string.isRequired,
+        isDisplay: PropTypes.bool
+    }),
+    onClick: PropTypes.func
+};
 
 export default TodoItem;
