@@ -50,7 +50,7 @@ class App extends Component {
       if(!text) {
         return;
       }
-      
+      this.onFilter('all')();
       this.setState({
         quantityOnDisplay: this.state.quantityOnDisplay+1,
         todoItems: [
@@ -60,7 +60,8 @@ class App extends Component {
             isDisplay: true
           },
           ...this.state.todoItems
-        ]
+        ],
+        newItem: ''
       });
     } else {
       this.setState({
